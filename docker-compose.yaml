@@ -9,17 +9,17 @@ services:
   3proxy:
     image: ghcr.io/tarampampam/3proxy:1
     environment:
-      PROXY_LOGIN: evil
-      PROXY_PASSWORD: live
+      # PROXY_LOGIN: evil
+      # PROXY_PASSWORD: live
       MAX_CONNECTIONS: 10000
-      PROXY_PORT: 8000
-      SOCKS_PORT: 8001
+      PROXY_PORT: 8081
+      SOCKS_PORT: 8082
       # Primary DNS resolver (1.0.0.1 by default)
-      PRIMARY_RESOLVER: 77.88.8.8
+      # PRIMARY_RESOLVER: 77.88.8.8
       # Secondary DNS resolver (8.8.4.4 by default)
-      SECONDARY_RESOLVER: 8.8.8.8
+      # SECONDARY_RESOLVER: 8.8.8.8
     ports:
       # - '8000:8000/tcp'
-      - "${proxy_http}:8000"
+      - "8081:8081"
       # - '8001:8001/tcp'
-      - "${proxy_socks}:8001"
+      - "8082:8082"
